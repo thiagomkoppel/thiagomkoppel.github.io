@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiago Koppel | Software Developer</title>
+  <meta name="description" content="Portfolio website for Thiago Morais Koppel, Software Developer specializing in artificial intelligence, systems engineering, and cross-platform software development." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121a33;
+      --card: rgba(255, 255, 255, 0.06);
+      --text: #eef2ff;
+      --muted: #aab4d6;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #7c9cff;
+      --accent-2: #8ef0d0;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      --radius: 20px;
+      --maxw: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124, 156, 255, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(142, 240, 208, 0.15), transparent 25%),
+        linear-gradient(180deg, #08101f 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 16, 31, 0.7);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      font-size: 1.05rem;
+    }
+
+    .brand span {
+      color: var(--accent-2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent-2);
+      background: rgba(255, 255, 255, 0.04);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.75rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 1.5rem;
+    }
+
+    .accent {
+      color: var(--accent-2);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.2rem;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #95aefd);
+      color: #091124;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-card,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1.4rem;
+    }
+
+    .profile {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b1020;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 1.5rem;
+    }
+
+    .profile small,
+    .muted {
+      color: var(--muted);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .mini-box {
+      padding: 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    section {
+      padding: 1.5rem 0 0.5rem;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 2vw, 2.2rem);
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-grid,
+    .projects-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .about-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      padding: 1.4rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title-row h3,
+    .contact-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .project-link {
+      color: var(--accent-2);
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .project p,
+    .contact-card p {
+      color: var(--muted);
+      margin: 0.5rem 0 0;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 3rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .contact-item {
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    footer {
+      padding: 1rem 0 2rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .about-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">Thiago<span>Koppel</span></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Software Developer • Artificial Intelligence • Systems Engineering</div>
+          <h1>
+            I build <span class="accent">intelligent</span>,
+            scalable, and high-performance software.
+          </h1>
+          <p>
+            I'm Thiago Morais Koppel, a software developer with experience in systems programming, game development,
+            cross-platform engineering, and artificial intelligence. My background spans backend development,
+            performance-focused software, and practical AI implementation across search, machine learning,
+            probabilistic reasoning, and optimization.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="mailto:thiagomkoppel@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="profile">
+            <div class="profile-top">
+              <div class="avatar">TK</div>
+              <div>
+                <strong>Thiago Morais Koppel</strong><br />
+                <small>Software Developer | Artificial Intelligence &amp; Systems Engineering</small>
+              </div>
+            </div>
+
+            <div class="mini-grid">
+              <div class="mini-box">
+                <strong>Focus</strong><br />
+                <span class="muted">Artificial Intelligence, Systems Engineering, Cross-Platform Development</span>
+              </div>
+              <div class="mini-box">
+                <strong>Location</strong><br />
+                <span class="muted">Lowell, MA, USA</span>
+              </div>
+              <div class="mini-box">
+                <strong>Experience</strong><br />
+                <span class="muted">Software development, AI, game dev, backend, and systems programming</span>
+              </div>
+              <div class="mini-box">
+                <strong>Email</strong><br />
+                <span class="muted">thiagomkoppel@gmail.com</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>About Me</h2>
+            <p>A professional snapshot of my experience, technical background, and strengths.</p>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="card">
+            <p>
+              Hello, I'm <strong>Your Name</strong>, a software developer and programmer with a strong interest in building practical,
+              efficient, and scalable solutions. I enjoy turning ideas into working products, improving existing systems, and writing code
+              that is organized and easy to maintain.
+            </p>
+            <p>
+              You can use this section to talk about your background, the technologies you work with, the type of roles you are seeking,
+              and the kind of impact you like to make through software.
+            </p>
+          </div>
+
+          <div class="card" id="skills">
+            <h3>Core Skills</h3>
+            <div class="stack">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Git / GitHub</span>
+              <span class="tag">APIs</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Automation</span>
+              <span class="tag">Problem Solving</span>
+              <span class="tag">Software Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Featured Projects</h2>
+            <p>Replace these examples with your real projects and links.</p>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project">
+            <div class="project-title-row">
+              <h3>Project One</h3>
+              <a class="project-link" href="https://github.com/yourusername/project-one" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+            <p>
+              A short description of your project. Explain what it does, the problem it solves, and the tools you used.
+            </p>
+            <div class="stack">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">API</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-title-row">
+              <h3>Project Two</h3>
+              <a class="project-link" href="https://github.com/yourusername/project-two" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+            <p>
+              Showcase another project here, such as a web app, automation tool, dashboard, or data-based application.
+            </p>
+            <div class="stack">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Frontend</span>
+              <span class="tag">Responsive UI</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="project-title-row">
+              <h3>Project Three</h3>
+              <a class="project-link" href="https://github.com/yourusername/project-three" target="_blank" rel="noreferrer">Code ↗</a>
+            </div>
+            <p>
+              Add your most relevant work here. Focus on results, technologies, and what makes the project worth seeing.
+            </p>
+            <div class="stack">
+              <span class="tag">SQL</span>
+              <span class="tag">Backend</span>
+              <span class="tag">Data</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Contact</h2>
+            <p>Make it easy for people to reach you.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <h3>Let's Connect</h3>
+            <p>
+              I'm open to software development opportunities, freelance work, technical collaborations, and interesting programming projects.
+            </p>
+            <div class="contact-list">
+              <a class="contact-item" href="mailto:your@email.com">your@email.com</a>
+              <a class="contact-item" href="https://github.com/yourusername" target="_blank" rel="noreferrer">github.com/yourusername</a>
+              <a class="contact-item" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noreferrer">linkedin.com/in/yourusername</a>
+            </div>
+          </div>
+
+          <div class="card contact-card">
+            <h3>Quick Tip</h3>
+            <p>
+              For GitHub Pages, save this file as <strong>index.html</strong> in your repository, then enable GitHub Pages in the repository settings.
+              Replace the placeholder text, links, and project names with your own details before publishing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Your Name. Built for GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
