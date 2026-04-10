@@ -366,6 +366,30 @@
         flex-direction: column;
       }
     }
+    .mini-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "focus location"
+      "focus experience"
+      "tech experience";
+    gap: 1rem;
+  }
+  
+  .mini-box:nth-child(1) { grid-area: focus; }
+  .mini-box:nth-child(2) { grid-area: location; }
+  .mini-box:nth-child(3) { grid-area: experience; }
+  .mini-box:nth-child(4) { grid-area: tech; }
+  
+  .mini-box-small {
+    padding: 0.8rem 1rem;
+  }
+  
+  .mini-box-large {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   </style>
 </head>
 <body>
@@ -415,7 +439,7 @@
 
            <div class="mini-grid">
 
-          <!-- Focus -->
+          <!-- Focus (normal size) -->
           <div class="mini-box">
             <strong>Focus</strong>
             <p class="muted">
@@ -423,27 +447,33 @@
             </p>
           </div>
         
-          <!-- Location -->
-          <div class="mini-box">
+          <!-- Location (SMALL CARD) -->
+          <div class="mini-box mini-box-small">
             <strong>Location</strong>
             <p class="muted">Boston, MA, USA</p>
           </div>
         
-          <!-- Experience -->
-          <div class="mini-box">
+          <!-- Experience (BIG CARD under location) -->
+          <div class="mini-box mini-box-large">
             <strong>Experience</strong>
             <p class="muted">
-              Software Development, AI, Game Development, Backend, and Systems Programming
+              10+ years in software development across systems programming, game development, and backend engineering.
+            </p>
+            <p class="muted">
+              Experienced in building high-performance applications, multiplayer systems, cross-platform software,
+              and scalable architectures using languages like C#, C/C++, Python, and JavaScript.
             </p>
           </div>
         
-          <!-- NEW (replace Email) -->
+          <!-- Technical Focus -->
           <div class="mini-box">
             <strong>Technical Focus</strong>
             <p class="muted">
-              Systems programming, AI algorithms, and performance optimization
+              Systems programming, AI algorithms, performance optimization, and scalable software design
             </p>
           </div>
+        
+        </div>
         
         </div>
           </div>
