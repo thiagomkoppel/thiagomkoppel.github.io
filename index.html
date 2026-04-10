@@ -17,11 +17,10 @@
       --accent-2: #8ef0d0;
       --shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
       --radius: 20px;
-      --maxw: 1100px;
+      --maxw: 1180px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -99,9 +98,9 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 2rem;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.2fr) minmax(340px, 420px);
+      gap: 2.5rem;
+      align-items: start;
     }
 
     .eyebrow {
@@ -115,19 +114,21 @@
       background: rgba(255, 255, 255, 0.04);
       font-size: 0.9rem;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 5vw, 4.75rem);
-      line-height: 1.05;
-      margin: 0 0 1rem;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.8rem, 6vw, 5.25rem);
+      line-height: 1.02;
+      margin: 0 0 1.1rem;
+      letter-spacing: -0.04em;
+      max-width: 11ch;
     }
 
-    .hero p {
+    .hero-copy {
       font-size: 1.08rem;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 62ch;
       margin: 0 0 1.5rem;
     }
 
@@ -191,9 +192,10 @@
     }
 
     .profile-top {
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
       gap: 1rem;
+      align-items: center;
     }
 
     .avatar {
@@ -205,26 +207,84 @@
       display: grid;
       place-items: center;
       font-weight: 800;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      flex-shrink: 0;
     }
 
-    .profile small,
+    .profile-text {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    .profile-name {
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .profile-role {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.55;
+      max-width: 30ch;
+    }
+
     .muted {
       color: var(--muted);
     }
 
     .mini-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.85rem;
-      margin-top: 0.5rem;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-areas:
+        "focus location"
+        "tech experience";
+      gap: 1rem;
+      align-items: stretch;
     }
 
     .mini-box {
-      padding: 1rem;
+      padding: 1.1rem;
       border-radius: 16px;
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.03);
+      min-width: 0;
+      height: 100%;
+    }
+
+    .mini-box h4 {
+      margin: 0 0 0.55rem;
+      font-size: 0.98rem;
+      line-height: 1.2;
+    }
+
+    .mini-box p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .box-focus { grid-area: focus; }
+    .box-location { grid-area: location; }
+    .box-tech { grid-area: tech; }
+    .box-experience { grid-area: experience; }
+
+    .box-location {
+      padding-top: 0.95rem;
+      padding-bottom: 0.95rem;
+      align-self: start;
+    }
+
+    .box-experience {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
     section {
@@ -258,11 +318,11 @@
     }
 
     .about-grid {
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
     }
 
     .projects-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .card {
@@ -294,7 +354,8 @@
     }
 
     .project-title-row h3,
-    .contact-card h3 {
+    .contact-card h3,
+    .card h3 {
       margin: 0;
       font-size: 1.1rem;
     }
@@ -306,327 +367,18 @@
     }
 
     .project p,
-    .contact-card p {
+    .contact-card p,
+    .education-item p,
+    .education-item span {
       color: var(--muted);
       margin: 0.5rem 0 0;
     }
 
     .contact-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       margin-bottom: 3rem;
     }
 
     .contact-list {
       display: grid;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
-
-    .contact-item {
-      padding: 0.95rem 1rem;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    footer {
-      padding: 1rem 0 2rem;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-    }
-
-    @media (max-width: 920px) {
-      .hero-grid,
-      .about-grid,
-      .projects-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 3.5rem;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .cta-row {
-        flex-direction: column;
-      }
-    }
-    .mini-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "focus location"
-      "focus experience"
-      "tech experience";
-    gap: 1rem;
-  }
-  
-  .mini-box:nth-child(1) { grid-area: focus; }
-  .mini-box:nth-child(2) { grid-area: location; }
-  .mini-box:nth-child(3) { grid-area: experience; }
-  .mini-box:nth-child(4) { grid-area: tech; }
-  
-  .mini-box-small {
-    padding: 0.8rem 1rem;
-  }
-  
-  .mini-box-large {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  </style>
-</head>
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand">Thiago<span>Koppel</span></a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Software Developer • Artificial Intelligence • Systems Engineering</div>
-          <h1>
-            I write <span class="accent">scalable, high-performance code</span>,
-            for systems, AI, and games.
-          </h1>
-          <p>
-            I'm Thiago Koppel, a software developer with experience in systems programming, game development,
-            cross-platform engineering, and artificial intelligence. My background spans backend development,
-            performance-focused software, and practical AI implementation across search, machine learning,
-            probabilistic reasoning, and optimization.
-          </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="mailto:thiagomkoppel@gmail.com">Email Me</a>
-            <a class="btn btn-secondary" href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <aside class="hero-card">
-          <div class="profile">
-            <div class="profile-top">
-              <div class="avatar">TK</div>
-              <div>
-                <strong>Thiago Koppel</strong><br />
-                <small>Software Developer | Artificial Intelligence &amp; Systems Engineering</small>
-              </div>
-            </div>
-
-           <div class="mini-grid">
-
-          <!-- Focus (normal size) -->
-          <div class="mini-box">
-            <strong>Focus</strong>
-            <p class="muted">
-              Artificial Intelligence, Systems Engineering, and Cross-Platform Development
-            </p>
-          </div>
-        
-          <!-- Location (SMALL CARD) -->
-          <div class="mini-box mini-box-small">
-            <strong>Location</strong>
-            <p class="muted">Boston, MA, USA</p>
-          </div>
-        
-          <!-- Experience (BIG CARD under location) -->
-          <div class="mini-box mini-box-large">
-            <strong>Experience</strong>
-            
-            <p class="muted">
-              Experienced in building high-performance applications, multiplayer systems, cross-platform software,
-              and scalable architectures using languages like C#, C/C++, Python, and JavaScript.
-            </p>
-          </div>
-        
-          <!-- Technical Focus -->
-          <div class="mini-box">
-            <strong>Technical Focus</strong>
-            <p class="muted">
-              Systems programming, AI algorithms, performance optimization, and scalable software design
-            </p>
-          </div>
-        
-        </div>
-        
-        </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>About Me</h2>
-            <p>A professional snapshot of my experience, technical background, and strengths.</p>
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="card">
-            <p>
-              I’m a software developer with experience in both systems programming and game development and a growing focus on artificial intelligence. I enjoy implementing algorithms and I’ve built gameplay systems, worked with real-time applications, and developed scalable software, always focusing on clean and efficient code. As part of my security-focused work, I led the planning and development of a MachineID feature for banking software. 
-
-            </p>
-          </div>
-
-          <div class="card" id="skills">
-            <h3>Core Skills</h3>
-            <div class="stack">
-              <span class="tag">Python</span>
-              <span class="tag">C#</span>
-              <span class="tag">C/C++</span>
-              <span class="tag">Artificial Intelligence</span>
-              <span class="tag">Git / GitHub</span>
-              <span class="tag">Unity</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Problem Solving</span>
-              <span class="tag">Software Development</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Featured Projects</h2>
-            <p>Replace these examples with your real projects and links.</p>
-          </div>
-        </div>
-
-        <div class="projects-grid">
-           <article class="card project">
-            <div class="project-title-row">
-              <h3>TSnake for DOS</h3>
-              <a class="project-link" href="https://github.com/thiagomkoppel/tsnakeDOS" target="_blank" rel="noreferrer">Code ↗</a>
-            </div>
-            <p>
-              
-            </p>
-            <div class="stack">
-              <span class="tag">C++</span>
-              <span class="tag">Game</span>
-              <span class="tag">DOS</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Contact</h2>
-            <p>Make it easy for people to reach you.</p>
-          </div>
-        </div>
-
-        <div class="contact-grid">
-          <div class="card contact-card">
-            <h3>Let's Connect</h3>
-            <p>
-              I'm open to software development opportunities, freelance work, technical collaborations, and interesting programming projects.
-            </p>
-            <div class="contact-list">
-              <a class="contact-item" href="mailto:thiagomkoppel@gmail.com">thiagomkoppel@gmail.com</a>
-              <a class="contact-item" href="https://github.com/thiagomkoppel" target="_blank" rel="noreferrer">github.com/thiagomkoppel</a>
-            </div>
-          </div>
-
-          <div class="card contact-card">
-  <h3>Education</h3>
-
-  <div style="display: grid; gap: 1.2rem; margin-top: 1rem;">
-
-    <!-- Harvard -->
-    <div style="display: flex; gap: 1rem; align-items: center;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/960px-Harvard_University_coat_of_arms.svg.png" 
-           alt="Harvard University Logo" 
-           style="width: 50px; height: 50px; object-fit: contain; background: white; padding: 6px; border-radius: 8px;">
-      
-      <div>
-        <strong>Harvard University</strong><br>
-        <span class="muted">
-          Introduction to Artificial Intelligence with Python — 2026
-        </span>
-      </div>
-    </div>
-
-    <!-- UFF -->
-    <div style="display: flex; gap: 1rem; align-items: center;">
-      <img src="https://upload.wikimedia.org/wikipedia/en/4/47/UFF_bras%C3%A3o.png" 
-           alt="UFF Logo" 
-           style="width: 50px; height: 50px; object-fit: contain; background: white; padding: 6px; border-radius: 8px;">
-      
-      <div>
-        <strong>Federal Fluminense University (UFF)</strong><br>
-        <span class="muted">
-          Bachelor's Degree in Computer Systems Technology — 2012
-        </span>
-      </div>
-    </div>
-
-    <!-- ICT -->
-    <div style="display: flex; gap: 1rem; align-items: center;">
-      <div style="width: 50px; height: 50px; display: grid; place-items: center; background: rgba(255,255,255,0.05); border-radius: 8px; font-weight: bold;">
-        <img src="https://www.colegioict.com.br/images/logo-ict.png" 
-           alt="UFF Logo" 
-           style="width: 50px; height: 50px; object-fit: contain; background: white; padding: 6px; border-radius: 8px;">
-      </div>
-      
-      <div>
-        <strong>Instituto de Cultura Técnica (ICT)</strong><br>
-        <span class="muted">
-          Technical Degree in Information Technology — 2007
-        </span>
-      </div>
-    </div>
-
-  </div>
-</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Thiago Koppel. Built for GitHub Pages.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      gap: 0.8rem
