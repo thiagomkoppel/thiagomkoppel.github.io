@@ -1,56 +1,40 @@
-BLOG FOLDER STRUCTURE
+BLOG SIMPLES PARA GITHUB PAGES
+===============================
 
-Place this entire folder inside your GitHub Pages repository:
+Como usar:
 
-blog/
-  index.html
-  article.html
-  style.css
-  main.js
-  article-loader.js
-  articles.js
-  articles/
-    flamengo-volume-sem-veneno.txt
-    como-avaliar-uma-finalizacao.txt
+1. Coloque a pasta blog dentro da raiz do seu site:
+   thiagomkoppel.github.io/blog/
 
-HOW TO OPEN THE BLOG
+2. A página principal será:
+   https://thiagomkoppel.github.io/blog/
 
-If your website is:
-https://thiagomkoppel.github.io/
+3. Para criar um novo artigo:
+   - Crie um arquivo .txt dentro da pasta:
+     blog/articles/
 
-Your blog will be:
-https://thiagomkoppel.github.io/blog/
+   Exemplo:
+     meu-novo-artigo.txt
 
-HOW TO ADD A NEW ARTICLE
+4. Abra o arquivo:
+   blog/articles.js
 
-1. Create a new .txt file inside:
-blog/articles/
-
-Example:
-blog/articles/nome-do-artigo.txt
-
-2. Write your article using simple formatting:
-
-# Main title
-## Section title
-### Subsection title
-- Bullet point
-> Highlight quote
-**bold text**
-*italic text*
-
-3. Open blog/articles.js and add a new item:
+5. Adicione um novo item na lista:
 
 {
-  slug: "nome-do-artigo",
-  title: "Título do artigo",
-  date: "2026-05-20",
-  readTime: "10 min de leitura",
-  category: "Análise de Dados",
-  tags: ["Flamengo", "xG"],
+  id: "meu-novo-artigo",
+  title: "Meu novo artigo",
+  category: "Football Analytics",
+  date: "2026",
+  readingTime: "8 min de leitura",
   summary: "Resumo curto do artigo.",
-  file: "nome-do-artigo.txt",
-  featured: false
+  file: "meu-novo-artigo.txt",
+  cover: ""
 }
 
-4. Commit and push to GitHub.
+6. O link do artigo será:
+   https://thiagomkoppel.github.io/blog/article.html?id=meu-novo-artigo
+
+OBS:
+- Os artigos aceitam títulos com #, ##, ###, tabelas simples e citações com >.
+- O design foi feito para parecer mais simples, branco e jornalístico.

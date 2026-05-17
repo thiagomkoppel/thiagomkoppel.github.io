@@ -1,45 +1,27 @@
-function formatDate(dateValue) {
-  if (!dateValue || dateValue.toLowerCase?.() === "em breve") return dateValue || "";
+const list = document.getElementById("articles-list");
 
-  const date = new Date(`${dateValue}T12:00:00`);
-  return date.toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "long",
-    year: "numeric"
-  });
-}
-
-function createTag(tag) {
-  return `<span class="tag">${tag}</span>`;
+function articleUrl(article) {
+  return `article.html?id=${encodeURIComponent(article.id)}`;
 }
 
 function renderArticles() {
-  const grid = document.getElementById("article-grid");
+  if (!list) return;
 
-  if (!grid) return;
-
-  grid.innerHTML = ARTICLES.map((article) => {
-    const tags = article.tags.map(createTag).join("");
-    const href = article.date === "Em breve"
-      ? "#"
-      : `article.html?slug=${encodeURIComponent(article.slug)}`;
-    const featuredClass = article.featured ? " featured-card" : "";
+  list.innerHTML = articles.map(article => {
+    const thumb = article.cover
+      ? `<img class="article-thumb" src="${article.cover}" alt="">`
+      : `<div class="article-thumb-placeholder">Article</div>`;
 
     return `
-      <article class="article-card${featuredClass}">
-        <div class="article-thumb">
-          <span>${article.category}</span>
-        </div>
-        <div class="article-card-content">
-          <div class="tags">${tags}</div>
-          <h3>${article.title}</h3>
-          <p>${article.summary}</p>
-          <div class="meta">
-            <span>${formatDate(article.date)}</span>
-            <span>•</span>
-            <span>${article.readTime}</span>
-          </div>
-          <a class="read-link" href="${href}">${article.date === "Em breve" ? "Em breve" : "Ler análise"} <span>→</span></a>
+      <article class="article-card">
+        <a href="${articleUrl(article)}">${thumb}</a>
+
+        <div>
+          <p class="section-label">${article.category}</p>
+          <h3><a href="${articleUrl(article)}">${article.title}</a></h3>
+          <p class="card-meta">${article.date} • ${article.readingTime}</p>
+          <p class="article-summary">${article.summary}</p>
+          <a class="read-more" href="${articleUrl(article)}">Ler artigo →</a>
         </div>
       </article>
     `;

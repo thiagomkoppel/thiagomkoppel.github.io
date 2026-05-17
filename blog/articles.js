@@ -1,27 +1,25 @@
-// Add every new article here.
-// The "file" field must match the .txt file name inside blog/articles/.
+// Add a new object here every time you publish a new article.
+// The `file` value must match the .txt file name inside /blog/articles/
 
-const ARTICLES = [
+const articles = [
   {
-    slug: "flamengo-volume-sem-veneno",
+    id: "flamengo-volume-sem-veneno",
     title: "Volume sem veneno: a crise de eficiência ofensiva do Flamengo",
-    date: "2026-05-17",
-    readTime: "12 min de leitura",
-    category: "Análise de Dados",
-    tags: ["Flamengo", "xG", "Tomada de decisão", "Finalizações"],
-    summary: "Uma análise das finalizações contra Grêmio e Vitória para entender se o problema está na criação, na execução técnica ou nas decisões tomadas no último terço.",
+    category: "Football Analytics",
+    date: "2026",
+    readingTime: "12 min de leitura",
+    summary: "Uma análise sobre 46 finalizações, 4,57 xG e apenas 1 gol nos jogos contra Grêmio e Vitória.",
     file: "flamengo-volume-sem-veneno.txt",
-    featured: true
+    cover: ""
   },
   {
-    slug: "como-avaliar-uma-finalizacao",
-    title: "O que é uma boa finalização? Distância, ângulo e pressão",
-    date: "Em breve",
-    readTime: "Em breve",
+    id: "como-avaliar-uma-finalizacao",
+    title: "Como avaliar uma finalização além do número bruto de chutes",
     category: "Metodologia",
-    tags: ["xG", "Scouting", "Metodologia"],
-    summary: "Uma explicação prática sobre como avaliar uma chance além do número bruto de chutes.",
+    date: "Em breve",
+    readingTime: "6 min de leitura",
+    summary: "Distância, ângulo, pressão defensiva, xG, xGOT e tomada de decisão no último terço.",
     file: "como-avaliar-uma-finalizacao.txt",
-    featured: false
+    cover: ""
   }
 ];

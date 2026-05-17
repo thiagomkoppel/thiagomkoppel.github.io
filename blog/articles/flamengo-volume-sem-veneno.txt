@@ -1,45 +1,42 @@
 # Volume sem veneno: a crise de eficiência ofensiva do Flamengo
 
-Nos jogos contra Grêmio e Vitória, o Flamengo produziu volume suficiente para vencer. Foram 46 finalizações, 4,57 xG e apenas 1 gol marcado.
+Nos jogos contra Grêmio e Vitória, o Flamengo produziu volume ofensivo suficiente para sair com resultados melhores. Foram 46 finalizações, 4,57 xG e apenas 1 gol marcado.
 
-O número bruto já chama atenção. Mas o ponto principal está por trás dele: o Flamengo não apenas finalizou muito. O Flamengo alternou entre boas chances desperdiçadas, chutes bloqueados, finalizações sob pressão, decisões precipitadas e momentos em que a qualidade da jogada não virou qualidade do chute.
+A pergunta central não é apenas por que o Flamengo perdeu tantos gols. A pergunta mais precisa é: o Flamengo está criando chances ruins, finalizando mal chances boas ou tomando decisões erradas no último terço?
 
-> O Flamengo está criando chances ruins, finalizando mal chances boas ou tomando decisões erradas no último terço?
+## O retrato geral
 
-A resposta dos dados aponta para uma combinação dos três fatores.
+| Indicador | Total |
+|---|---:|
+| Finalizações | 46 |
+| Gols | 1 |
+| xG | 4,57 |
+| xGOT | 3,20 |
+| Finalizações bloqueadas | 16 |
+| Finalizações defendidas | 11 |
+| Finalizações para fora | 16 |
+| Bolas na trave | 2 |
 
-## 1. O retrato geral
+O Flamengo criou volume, mas não transformou esse volume em eficiência. A diferença entre 4,57 xG e apenas 1 gol mostra que o time produziu chances suficientes para marcar mais.
 
-Somando os dois jogos, o Flamengo produziu 46 finalizações, 4,57 xG, 3,20 xGOT e apenas 1 gol.
+## O problema não é um só
 
-A diferença entre xG e gols foi de aproximadamente -3,57. Pela qualidade das chances criadas, o time deveria ter marcado mais.
+A análise aponta para três problemas combinados:
 
-Mas existe outro detalhe importante: o Flamengo também teve 16 finalizações bloqueadas, 16 para fora, 11 defendidas e 2 bolas na trave. Isso mostra que parte do volume não virou perigo real.
+### 1. Execução ruim em chances claras
 
-## 2. Contra o Grêmio
+O Flamengo teve chances grandes, mas não converteu. Samuel Lino, Luiz Araújo, Léo Pereira, Pedro e Bruno Henrique aparecem em lances de alto valor que poderiam ter mudado os jogos.
 
-Contra o Grêmio, o Flamengo teve 20 finalizações, 2,26 xG, 0,98 xGOT e 1 gol.
+### 2. Excesso de chutes de baixo valor
 
-O problema principal parece ter sido a execução. O time criou chances claras, mas transformou pouco desse valor em finalizações realmente perigosas no alvo.
+Uma parte relevante das finalizações teve baixa probabilidade de gol. Esse tipo de chute aumenta o volume, mas nem sempre aumenta a chance real de vencer.
 
-Samuel Lino teve uma chance de 0,53 xG. Luiz Araújo teve uma oportunidade de 0,41 xG. Esses dois lances, sozinhos, somam quase um gol esperado.
+### 3. Finalizações com defensor no caminho
 
-## 3. Contra o Vitória
+Muitos chutes foram bloqueados ou ocorreram com defensor entre o jogador e o gol. Isso indica que o Flamengo chegou ao terço final, mas nem sempre conseguiu limpar a jogada antes de finalizar.
 
-Contra o Vitória, o problema foi ainda mais complexo. O Flamengo finalizou 26 vezes, gerou 2,31 xG e não marcou.
+## Conclusão
 
-Além disso, 11 chutes foram bloqueados. A marcação manual mostrou 14 finalizações sob pressão, 16 com defensor entre o chute e o gol e 6 lances em que havia um passe melhor disponível.
+O Flamengo não está criando pouco. O time chega, pressiona e finaliza. Mas os dados sugerem que a equipe ainda precisa transformar domínio em finalizações mais limpas e, principalmente, transformar chances claras em gol.
 
-Isso sugere que o Flamengo chegou ao terço final, mas muitas vezes não conseguiu limpar a jogada antes de finalizar.
-
-## 4. Conclusão
-
-O Flamengo não vive exatamente uma crise de criação. O time chega, ocupa o campo ofensivo e produz volume.
-
-O problema é transformar volume em eficiência.
-
-A equipe alterna bons momentos de criação com escolhas precipitadas, finalizações bloqueadas e falha técnica nas chances que deveriam decidir os jogos.
-
-A síntese mais fiel aos dados é simples:
-
-> O Flamengo cria volume suficiente para vencer, mas ainda não transforma esse volume em eficiência.
+> O problema não é apenas pontaria. É uma mistura de pressão, bloqueios, decisões apressadas e falha técnica no momento final.
