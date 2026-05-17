@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Artigo do blog de Thiago Koppel sobre futebol, dados e inteligência artificial." />
-  <title>Artigo | Thiago Koppel</title>
+  <meta name="description" content="Article from Thiago Koppel's blog about football analytics, AI and data analysis." />
+  <title>Article | Thiago Koppel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -13,21 +13,25 @@
     <div class="container nav">
       <a class="brand" href="../index.html">Thiago Koppel</a>
 
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="index.html">Blog</a>
-        <a href="../index.html#contact">Contact</a>
+      <nav class="top-nav">
+        <a href="../index.html" data-i18n="navHome">Home</a>
+        <a href="index.html" data-i18n="navBlog">Blog</a>
+        <a href="../index.html#contact" data-i18n="navContact">Contact</a>
       </nav>
+
+      <button class="small-language-button" id="switch-article-language" type="button">
+        Change language
+      </button>
     </div>
   </header>
 
   <main>
     <article class="container article-page">
-      <a class="back-link" href="index.html">← Voltar para o blog</a>
+      <a class="back-link" href="index.html" id="back-link">← Back to blog</a>
 
       <header class="article-header">
         <p id="article-category" class="section-label"></p>
-        <h1 id="article-title">Carregando artigo...</h1>
+        <h1 id="article-title">Loading article...</h1>
         <p id="article-meta" class="article-meta"></p>
       </header>
 
@@ -48,6 +52,7 @@
   <!-- Mammoth converts .docx files into clean HTML in the browser. -->
   <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js"></script>
   <script src="articles.js"></script>
+  <script src="i18n.js"></script>
   <script src="article-loader.js"></script>
 </body>
 </html>

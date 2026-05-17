@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Blog de Thiago Koppel com artigos sobre futebol, dados, inteligência artificial e análise de desempenho." />
+  <meta name="description" content="Blog by Thiago Koppel with articles about football analytics, AI, data analysis and performance." />
   <title>Blog | Thiago Koppel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,65 +13,86 @@
     <div class="container nav">
       <a class="brand" href="../index.html">Thiago Koppel</a>
 
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#projects">Projects</a>
-        <a href="../index.html#contact">Contact</a>
+      <nav class="top-nav">
+        <a href="../index.html" data-i18n="navHome">Home</a>
+        <a href="../index.html#about" data-i18n="navAbout">About</a>
+        <a href="../index.html#projects" data-i18n="navProjects">Projects</a>
+        <a href="../index.html#contact" data-i18n="navContact">Contact</a>
       </nav>
+
+      <button class="small-language-button" id="change-language-button" type="button">
+        Change language
+      </button>
     </div>
   </header>
 
   <main>
-    <section class="blog-hero">
-      <div class="container">
-        <p class="section-label">Football Analytics Blog</p>
-        <h1>Artigos sobre futebol, dados e inteligência artificial.</h1>
-        <p class="hero-text">
-          Estudos simples e objetivos sobre análise de desempenho, xG, tomada de decisão,
-          visualização de dados e aplicações de IA no futebol.
+    <section id="language-screen" class="language-screen">
+      <div class="language-card">
+        <p class="section-label">Thiago Koppel Blog</p>
+        <h1>Choose your language</h1>
+        <p>
+          Select how you want to read the blog. You can switch languages later at any time.
         </p>
+
+        <div class="language-actions">
+          <button class="language-choice" type="button" data-lang="en">
+            <span>English</span>
+            <small>Read articles in English</small>
+          </button>
+
+          <button class="language-choice" type="button" data-lang="pt">
+            <span>Português</span>
+            <small>Ler artigos em português</small>
+          </button>
+        </div>
       </div>
     </section>
 
-    <section class="container blog-layout">
-      <div class="main-column">
-        <div class="section-title">
-          <h2>Últimos artigos</h2>
-          <p>Textos publicados em formato de análise jornalística e técnica.</p>
-        </div>
-
-        <div id="articles-list" class="articles-list"></div>
-      </div>
-
-      <aside class="sidebar">
-        <div class="side-card">
-          <h3>Sobre o blog</h3>
-          <p>
-            Este espaço reúne análises de futebol usando dados, Python, revisão de vídeo
-            e interpretação tática.
+    <section id="blog-content" class="hidden">
+      <section class="blog-hero">
+        <div class="container">
+          <p class="section-label" data-i18n="heroLabel">Football Analytics Blog</p>
+          <h1 data-i18n="heroTitle">Articles about football, data and artificial intelligence.</h1>
+          <p class="hero-text" data-i18n="heroText">
+            Simple and objective studies about performance analysis, xG, decision-making,
+            data visualization and AI applications in football.
           </p>
         </div>
+      </section>
 
-        <div class="side-card">
-          <h3>Como publicar</h3>
-          <p>
-            Escreva o artigo no Word, salve como .docx, coloque em <strong>blog/articles/</strong>
-            e registre o arquivo em <strong>articles.js</strong>.
-          </p>
+      <section class="container blog-layout">
+        <div class="main-column">
+          <div class="section-title">
+            <h2 data-i18n="latestArticles">Latest articles</h2>
+            <p data-i18n="latestDescription">Texts published in a journalistic and technical analysis format.</p>
+          </div>
+
+          <div id="articles-list" class="articles-list"></div>
         </div>
 
-        <div class="side-card">
-          <h3>Temas</h3>
-          <ul class="topics">
-            <li>xG e xGOT</li>
-            <li>Análise de finalizações</li>
-            <li>Scouting</li>
-            <li>Python para futebol</li>
-            <li>IA aplicada ao esporte</li>
-          </ul>
-        </div>
-      </aside>
+        <aside class="sidebar">
+          <div class="side-card">
+            <h3 data-i18n="aboutBlogTitle">About this blog</h3>
+            <p data-i18n="aboutBlogText">
+              This space brings together football analysis using data, Python, video review
+              and tactical interpretation.
+            </p>
+          </div>
+
+          <div class="side-card">
+            <h3 data-i18n="publishTitle">How publishing works</h3>
+            <p data-i18n="publishText">
+              Each article has one DOCX file in Portuguese and one DOCX file in English.
+            </p>
+          </div>
+
+          <div class="side-card">
+            <h3 data-i18n="topicsTitle">Topics</h3>
+            <ul class="topics" id="topics-list"></ul>
+          </div>
+        </aside>
+      </section>
     </section>
   </main>
 
@@ -82,6 +103,7 @@
   </footer>
 
   <script src="articles.js"></script>
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

@@ -3,7 +3,18 @@ function getArticleId() {
   return params.get("id") || articles[0].id;
 }
 
+let currentLanguage = getSavedLanguage() || "en";
+
+function setArticleUrlLang(lang) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", lang);
+  window.history.replaceState({}, "", url);
+}
+
 async function loadArticle() {
+  setLanguage(currentLanguage);
+  setArticleUrlLang(currentLanguage);
+
   const articleId = getArticleId();
   const article = articles.find(item => item.id === articleId);
 
@@ -15,32 +26,32 @@ async function loadArticle() {
   const cover = document.getElementById("article-cover");
 
   if (!article) {
-    title.textContent = "Artigo não encontrado";
-    content.innerHTML = "<p>Volte para a página principal do blog e escolha um artigo disponível.</p>";
+    title.textContent = translations[currentLanguage].articleNotFound;
+    content.innerHTML = `<p>${translations[currentLanguage].articleNotFoundText}</p>`;
     return;
   }
 
-  document.title = `${article.title} | Thiago Koppel`;
-  title.textContent = article.title;
-  category.textContent = article.category;
-  meta.textContent = `${article.date} • ${article.readingTime}`;
+  document.title = `${article.title[currentLanguage]} | Thiago Koppel`;
+  title.textContent = article.title[currentLanguage];
+  category.textContent = article.category[currentLanguage];
+  meta.textContent = `${article.date[currentLanguage]} • ${article.readingTime[currentLanguage]}`;
 
   if (article.cover) {
     cover.src = article.cover;
-    cover.alt = article.title;
+    cover.alt = article.title[currentLanguage];
     coverWrapper.classList.remove("hidden");
   }
 
   if (!window.mammoth) {
     content.innerHTML = `
-      <p>Não foi possível carregar o leitor de arquivos .docx.</p>
-      <p>Verifique sua conexão ou use a versão alternativa em .txt/.html.</p>
+      <p>${translations[currentLanguage].fileErrorTitle}</p>
+      <p>Mammoth.js did not load. Check your internet connection.</p>
     `;
     return;
   }
 
   try {
-    const response = await fetch(`articles/${article.file}`);
+    const response = await fetch(`articles/${article.files[currentLanguage]}`);
     if (!response.ok) throw new Error("Article file not found");
 
     const arrayBuffer = await response.arrayBuffer();
@@ -67,18 +78,28 @@ async function loadArticle() {
       }
     );
 
-    content.innerHTML = result.value || "<p>O arquivo foi carregado, mas não havia conteúdo para exibir.</p>";
+    content.innerHTML = result.value || "<p>The file loaded, but no content was available.</p>";
 
     if (result.messages && result.messages.length) {
       console.log("Mammoth conversion messages:", result.messages);
     }
   } catch (error) {
     content.innerHTML = `
-      <p>Não foi possível carregar o arquivo do artigo.</p>
-      <p>Verifique se o arquivo <strong>${article.file}</strong> existe dentro da pasta <strong>blog/articles/</strong>.</p>
-      <p>Detalhe técnico: ${error.message}</p>
+      <p>${translations[currentLanguage].fileErrorTitle}</p>
+      <p>${translations[currentLanguage].fileErrorHelp}</p>
+      <p><strong>File:</strong> articles/${article.files[currentLanguage]}</p>
+      <p><strong>Details:</strong> ${error.message}</p>
     `;
   }
+}
+
+const switchButton = document.getElementById("switch-article-language");
+if (switchButton) {
+  switchButton.addEventListener("click", () => {
+    currentLanguage = currentLanguage === "en" ? "pt" : "en";
+    localStorage.setItem("blogLanguage", currentLanguage);
+    loadArticle();
+  });
 }
 
 loadArticle();
