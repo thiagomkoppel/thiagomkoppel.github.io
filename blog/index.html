@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Blog de análise de dados no futebol, scouting e inteligência artificial aplicada ao jogo." />
+  <title>Blog | Thiago Koppel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="../index.html" class="brand" aria-label="Voltar para a página inicial">
+        <span class="brand-mark">TK</span>
+        <span>Thiago Koppel</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../index.html#projects">Projetos</a>
+        <a class="active" href="index.html">Blog</a>
+        <a href="../index.html#contact">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Análise de Dados no Futebol</span>
+          <h1>Artigos sobre futebol, dados e inteligência artificial.</h1>
+          <p>
+            Estudos de caso, análises de partidas, visualizações em Python, scouting,
+            xG, tomada de decisão e aplicações de IA no futebol.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#artigos">Ler artigos</a>
+            <a class="btn btn-secondary" href="#como-publicar">Como publicar</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="stat-stack">
+            <div class="stat-card">
+              <strong>Python</strong>
+              <span>visualização, planilhas e análise estatística</span>
+            </div>
+            <div class="stat-card">
+              <strong>xG + vídeo</strong>
+              <span>dados combinados com revisão manual dos lances</span>
+            </div>
+            <div class="stat-card">
+              <strong>Futebol real</strong>
+              <span>análises aplicadas a jogos, jogadores e decisões</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="artigos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Publicações</span>
+            <h2>Todos os artigos</h2>
+          </div>
+          <p>
+            Para adicionar um novo artigo, crie um arquivo .txt dentro da pasta
+            <strong>articles</strong> e adicione uma entrada no arquivo <strong>articles.js</strong>.
+          </p>
+        </div>
+
+        <div id="article-grid" class="article-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" id="como-publicar">
+      <div class="container publish-card">
+        <span class="eyebrow">Como publicar</span>
+        <h2>Fluxo simples para postar novos artigos</h2>
+        <ol class="steps">
+          <li>Crie um novo arquivo na pasta <code>blog/articles</code>, por exemplo: <code>flamengo-volume-sem-veneno.txt</code>.</li>
+          <li>Escreva o artigo em texto simples. Use linhas começando com <code>#</code>, <code>##</code> ou <code>###</code> para títulos.</li>
+          <li>Abra <code>blog/articles.js</code> e adicione um novo item na lista <code>ARTICLES</code>.</li>
+          <li>Publique no GitHub Pages. O blog vai carregar o texto automaticamente quando o leitor abrir o artigo.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Thiago Koppel. Todos os direitos reservados.</p>
+      <p>Software Developer • Artificial Intelligence • Football Analytics</p>
+    </div>
+  </footer>
+
+  <script src="articles.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

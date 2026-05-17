@@ -1,0 +1,16 @@
+# O que é uma boa finalização? Distância, ângulo e pressão
+
+Este é um artigo de exemplo em modo rascunho.
+
+## Ideia central
+
+Uma boa finalização não depende apenas da distância para o gol. Também importa o ângulo, a pressão defensiva, a posição do goleiro, a parte do corpo usada e se havia uma opção de passe melhor.
+
+## Próximos pontos
+
+- Distância até o gol
+- Ângulo da finalização
+- Defensor entre o chute e o gol
+- Pressão no momento do chute
+- xG e xGOT
+- Decisão individual versus chance coletiva
