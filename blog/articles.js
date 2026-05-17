@@ -29,6 +29,6 @@ const articles = [
       en: "en/flamengo-volume-without-venom.docx",
       pt: "pt/flamengo-volume-sem-veneno.docx"
     },
-    cover: ""
+    cover: "assets/flamengo-volume-sem-veneno.png"
   }
 ];
