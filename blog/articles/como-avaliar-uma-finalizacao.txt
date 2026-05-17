@@ -1,5 +1,0 @@
-# Como avaliar uma finalização além do número bruto de chutes
-
-Este artigo será publicado em breve.
-
-A ideia é explicar como analisar uma finalização considerando distância, ângulo, pressão defensiva, posição do goleiro, defensor entre o chute e o gol, xG, xGOT e contexto do jogo.
