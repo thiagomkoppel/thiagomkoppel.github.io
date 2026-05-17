@@ -1,6 +1,3 @@
-// Add a new object here every time you publish a new article.
-// The `file` value must match the .txt file name inside /blog/articles/
-
 const articles = [
   {
     id: "flamengo-volume-sem-veneno",
@@ -10,16 +7,6 @@ const articles = [
     readingTime: "12 min de leitura",
     summary: "Uma análise sobre 46 finalizações, 4,57 xG e apenas 1 gol nos jogos contra Grêmio e Vitória.",
     file: "flamengo-volume-sem-veneno.txt",
-    cover: ""
-  },
-  {
-    id: "como-avaliar-uma-finalizacao",
-    title: "Como avaliar uma finalização além do número bruto de chutes",
-    category: "Metodologia",
-    date: "Em breve",
-    readingTime: "6 min de leitura",
-    summary: "Distância, ângulo, pressão defensiva, xG, xGOT e tomada de decisão no último terço.",
-    file: "como-avaliar-uma-finalizacao.txt",
     cover: ""
   }
 ];
