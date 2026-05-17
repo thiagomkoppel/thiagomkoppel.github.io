@@ -79,8 +79,7 @@ nav a:hover {
 .blog-hero {
   padding: 72px 0 48px;
   border-bottom: 1px solid var(--line);
-  background:
-    linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
 }
 
 .section-label {
@@ -270,6 +269,10 @@ nav a:hover {
   font-size: 1.12rem;
 }
 
+.article-content h1 {
+  display: none;
+}
+
 .article-content h2 {
   font-size: 1.8rem;
   line-height: 1.15;
@@ -297,6 +300,15 @@ nav a:hover {
   background: var(--accent-soft);
 }
 
+.article-content ul,
+.article-content ol {
+  margin: 0 0 20px 26px;
+}
+
+.article-content li {
+  margin-bottom: 6px;
+}
+
 .article-content table {
   width: 100%;
   border-collapse: collapse;
@@ -314,6 +326,17 @@ nav a:hover {
 
 .article-content th {
   background: var(--bg-soft);
+}
+
+.article-content figure {
+  margin: 32px 0;
+}
+
+.article-content figcaption {
+  font-family: Inter, Arial, sans-serif;
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin-top: 8px;
 }
 
 .footer {
