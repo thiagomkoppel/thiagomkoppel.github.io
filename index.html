@@ -463,6 +463,60 @@
       border-bottom: 0;
     }
 
+    .certificate-section {
+      margin-top: 1.35rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(16, 33, 41, 0.12);
+    }
+
+    .certificate-section h4 {
+      margin: 0 0 0.85rem;
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .certificate-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .certificate-card {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 0.8rem;
+      align-items: center;
+      padding: 0.9rem;
+      border-radius: 16px;
+      border: 1px solid rgba(16, 33, 41, 0.1);
+      background: #fbf7f0;
+    }
+
+    .certificate-card strong {
+      display: block;
+      line-height: 1.35;
+    }
+
+    .certificate-card span {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    .certificate-logo {
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid rgba(16, 33, 41, 0.1);
+    }
+
     .edu-logo {
       width: 54px;
       height: 54px;
@@ -566,6 +620,7 @@
       .intro-strip,
       .about-grid,
       .projects-grid,
+      .certificate-grid,
       .contact-box {
         grid-template-columns: 1fr;
       }
@@ -820,14 +875,6 @@
           </div>
 
           <div class="education-item">
-            <img class="edu-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/960px-Harvard_University_coat_of_arms.svg.png" alt="Harvard University Logo" />
-            <div>
-              <strong>Harvard University</strong>
-              <span>Introduction to Artificial Intelligence with Python — 2026</span>
-            </div>
-          </div>
-
-          <div class="education-item">
             <img class="edu-logo" src="https://upload.wikimedia.org/wikipedia/en/4/47/UFF_bras%C3%A3o.png" alt="Federal Fluminense University Logo" />
             <div>
               <strong>Federal Fluminense University (UFF)</strong>
@@ -840,6 +887,28 @@
             <div>
               <strong>Instituto de Cultura Técnica (ICT)</strong>
               <span>Technical Degree in Information Technology — 2007</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="certificate-section">
+          <h4>Certificates</h4>
+
+          <div class="certificate-grid">
+            <div class="certificate-card">
+              <img class="certificate-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Harvard_University_coat_of_arms.svg/960px-Harvard_University_coat_of_arms.svg.png" alt="Harvard University Logo" />
+              <div>
+                <strong>Introduction to Artificial Intelligence with Python</strong>
+                <span>Harvard University — Completed 2026</span>
+              </div>
+            </div>
+
+            <div class="certificate-card">
+              <img class="certificate-logo" src="https://yt3.googleusercontent.com/_gp1LqIURbX2pdr2bs64lMjrAhAzCauxVoEe31KXx24tABu9scVZKvFLue8ZrHlHWO3PmvLa52o=s900-c-k-c0x00ffffff-no-rj" alt="Coursera Logo" />
+              <div>
+                <strong>Mathematics for Machine Learning Specialization</strong>
+                <span>Imperial College London — In Progress</span>
+              </div>
             </div>
           </div>
         </div>
