@@ -98,9 +98,9 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(340px, 420px);
+      grid-template-columns: minmax(0, 1.15fr) minmax(390px, 460px);
       gap: 2.5rem;
-      align-items: start;
+      align-items: center;
     }
 
     .eyebrow {
@@ -238,53 +238,56 @@
       color: var(--muted);
     }
 
-    .mini-grid {
+    .profile-meta {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      grid-template-areas:
-        "focus location"
-        "tech experience";
-      gap: 1rem;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.4fr) minmax(120px, 0.6fr);
+      gap: 0.85rem;
     }
 
-    .mini-box {
-      padding: 1.1rem;
+    .profile-chip,
+    .profile-detail {
+      padding: 1rem;
       border-radius: 16px;
       border: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.03);
       min-width: 0;
-      height: 100%;
     }
 
-    .mini-box h4 {
-      margin: 0 0 0.55rem;
+    .profile-chip h4,
+    .profile-detail h4 {
+      margin: 0 0 0.45rem;
       font-size: 0.98rem;
       line-height: 1.2;
     }
 
-    .mini-box p {
+    .profile-chip p,
+    .profile-detail p {
       margin: 0;
       color: var(--muted);
       line-height: 1.55;
       overflow-wrap: anywhere;
     }
 
-    .box-focus { grid-area: focus; }
-    .box-location { grid-area: location; }
-    .box-tech { grid-area: tech; }
-    .box-experience { grid-area: experience; }
-
-    .box-location {
-      padding-top: 0.95rem;
-      padding-bottom: 0.95rem;
-      align-self: start;
+    .profile-details {
+      display: grid;
+      gap: 0.85rem;
     }
 
-    .box-experience {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
+    .profile-detail {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .profile-detail h4 {
+      margin: 0;
+      color: var(--text);
+    }
+
+    .experience-copy {
+      display: grid;
+      gap: 0.65rem;
     }
 
     section {
@@ -479,13 +482,13 @@
         font-size: 1.6rem;
       }
 
-      .mini-grid {
+      .profile-meta {
         grid-template-columns: 1fr;
-        grid-template-areas:
-          "focus"
-          "location"
-          "experience"
-          "tech";
+      }
+
+      .profile-detail {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
       }
 
       h1 {
@@ -540,26 +543,30 @@
               </div>
             </div>
 
-            <div class="mini-grid">
-              <div class="mini-box box-focus">
+            <div class="profile-meta">
+              <div class="profile-chip">
                 <h4>Focus</h4>
                 <p>Artificial Intelligence, Software Developer, and Computer Vision</p>
               </div>
 
-              <div class="mini-box box-location">
+              <div class="profile-chip">
                 <h4>Location</h4>
                 <p>Brazil</p>
               </div>
+            </div>
 
-              <div class="mini-box box-tech">
+            <div class="profile-details">
+              <div class="profile-detail">
                 <h4>Technical Focus</h4>
                 <p>Systems programming, AI algorithms, and scalable software development. Currently expanding into machine learning and computer vision, building intelligent systems that transform data into practical insights, with a particular interest in football analytics and sports technology.</p>
               </div>
 
-              <div class="mini-box box-experience">
+              <div class="profile-detail">
                 <h4>Experience</h4>
-                <p>Experienced in developing high-performance applications.</p>
-                <p>Hands-on work across C#, C/C++, Python, and JavaScript with a strong emphasis on clean, efficient code.</p>
+                <div class="experience-copy">
+                  <p>Experienced in developing high-performance applications.</p>
+                  <p>Hands-on work across C#, C/C++, Python, and JavaScript with a strong emphasis on clean, efficient code.</p>
+                </div>
               </div>
             </div>
           </div>
