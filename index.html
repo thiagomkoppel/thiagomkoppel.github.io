@@ -100,7 +100,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(390px, 460px);
       gap: 2.5rem;
-      align-items: center;
+      align-items: start;
     }
 
     .eyebrow {
@@ -496,6 +496,75 @@
         max-width: none;
       }
     }
+  
+    /* OPTION 1: Compact profile dashboard */
+    .hero-card.option-dashboard {
+      padding: 1.25rem;
+    }
+
+    .dashboard-top {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dashboard-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .dashboard-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.52rem 0.72rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .dashboard-pill strong {
+      color: var(--text);
+      font-size: 0.86rem;
+    }
+
+    .dashboard-section {
+      padding: 1rem 0 0;
+    }
+
+    .dashboard-section + .dashboard-section {
+      margin-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .dashboard-label {
+      display: block;
+      margin-bottom: 0.45rem;
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dashboard-section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .dashboard-section p + p {
+      margin-top: 0.65rem;
+    }
+
   </style>
 </head>
 <body>
@@ -533,42 +602,29 @@
           </p>
         </div>
 
-        <aside class="hero-card">
-          <div class="profile">
-            <div class="profile-top">
-              <div class="avatar">TK</div>
-              <div class="profile-text">
-                <p class="profile-name">Thiago Koppel</p>
-                <p class="profile-role">Software Developer | Artificial Intelligence</p>
-              </div>
+        <aside class="hero-card option-dashboard">
+          <div class="dashboard-top">
+            <div class="avatar">TK</div>
+            <div class="profile-text">
+              <p class="profile-name">Thiago Koppel</p>
+              <p class="profile-role">Software Developer | Artificial Intelligence</p>
             </div>
+          </div>
 
-            <div class="profile-meta">
-              <div class="profile-chip">
-                <h4>Focus</h4>
-                <p>Artificial Intelligence, Software Developer, and Computer Vision</p>
-              </div>
+          <div class="dashboard-meta">
+            <span class="dashboard-pill"><strong>Focus:</strong> Artificial Intelligence, Software Developer, and Computer Vision</span>
+            <span class="dashboard-pill"><strong>Location:</strong> Brazil</span>
+          </div>
 
-              <div class="profile-chip">
-                <h4>Location</h4>
-                <p>Brazil</p>
-              </div>
-            </div>
+          <div class="dashboard-section">
+            <span class="dashboard-label">Technical Focus</span>
+            <p>Systems programming, AI algorithms, and scalable software development. Currently expanding into machine learning and computer vision, building intelligent systems that transform data into practical insights, with a particular interest in football analytics and sports technology.</p>
+          </div>
 
-            <div class="profile-details">
-              <div class="profile-detail">
-                <h4>Technical Focus</h4>
-                <p>Systems programming, AI algorithms, and scalable software development. Currently expanding into machine learning and computer vision, building intelligent systems that transform data into practical insights, with a particular interest in football analytics and sports technology.</p>
-              </div>
-
-              <div class="profile-detail">
-                <h4>Experience</h4>
-                <div class="experience-copy">
-                  <p>Experienced in developing high-performance applications.</p>
-                  <p>Hands-on work across C#, C/C++, Python, and JavaScript with a strong emphasis on clean, efficient code.</p>
-                </div>
-              </div>
-            </div>
+          <div class="dashboard-section">
+            <span class="dashboard-label">Experience</span>
+            <p>Experienced in developing high-performance applications.</p>
+            <p>Hands-on work across C#, C/C++, Python, and JavaScript with a strong emphasis on clean, efficient code.</p>
           </div>
         </aside>
       </div>
