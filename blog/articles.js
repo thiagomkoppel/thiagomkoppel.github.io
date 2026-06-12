@@ -30,5 +30,33 @@ const articles = [
       pt: "pt/flamengo-volume-sem-veneno.docx"
     },
     cover: "assets/flamengo-volume-sem-veneno.png"
+  },
+    {
+    id: "pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection",
+    category: {
+      en: "Computer Vision / Artificial Intelligence",
+      pt: "Computer Vision / Artificial Intelligence"
+    },
+    title: {
+      en: "Pitch Perfect: Evaluating Segmentation Approaches for Football Line Detection",
+      pt: ""
+    },
+    date: {
+      en: "2026",
+      pt: "2026"
+    },
+    readingTime: {
+      en: "10 min read",
+      pt: "10 min de leitura"
+    },
+    summary: {
+      en: "This article examines the performance trade-offs between classical computer vision techniques and modern deep learning approaches",
+      pt: ""
+    },
+    files: {
+      en: "en/pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection.docx",
+      pt: ""
+    },
+    cover: "assets/pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection.png"
   }
 ];
