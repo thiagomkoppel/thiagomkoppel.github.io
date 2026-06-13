@@ -4,34 +4,6 @@
 
 const articles = [
   {
-    id: "flamengo-volume-sem-veneno",
-    category: {
-      en: "Football Analytics",
-      pt: "Análise de Futebol"
-    },
-    title: {
-      en: "Volume Without Venom: Flamengo’s Finishing Efficiency Crisis",
-      pt: "Volume sem veneno: a crise de eficiência ofensiva do Flamengo"
-    },
-    date: {
-      en: "2026",
-      pt: "2026"
-    },
-    readingTime: {
-      en: "12 min read",
-      pt: "12 min de leitura"
-    },
-    summary: {
-      en: "An analysis of 46 shots, 4.57 xG and only 1 goal across Flamengo’s matches against Grêmio and Vitória.",
-      pt: "Uma análise sobre 46 finalizações, 4,57 xG e apenas 1 gol nos jogos contra Grêmio e Vitória."
-    },
-    files: {
-      en: "en/flamengo-volume-without-venom.docx",
-      pt: "pt/flamengo-volume-sem-veneno.docx"
-    },
-    cover: "assets/flamengo-volume-sem-veneno.png"
-  },
-    {
     id: "pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection",
     category: {
       en: "Computer Vision / Artificial Intelligence",
@@ -58,5 +30,33 @@ const articles = [
       pt: "pt/Pitch_Perfect_Avaliando_Abordagens_de_Segmentação_para_Detecção_de_Linhas_em_Futebol.docx"
     },
     cover: "assets/pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection.png"
-  }
+  },
+  {
+    id: "flamengo-volume-sem-veneno",
+    category: {
+      en: "Football Analytics",
+      pt: "Análise de Futebol"
+    },
+    title: {
+      en: "Volume Without Venom: Flamengo’s Finishing Efficiency Crisis",
+      pt: "Volume sem veneno: a crise de eficiência ofensiva do Flamengo"
+    },
+    date: {
+      en: "2026",
+      pt: "2026"
+    },
+    readingTime: {
+      en: "12 min read",
+      pt: "12 min de leitura"
+    },
+    summary: {
+      en: "An analysis of 46 shots, 4.57 xG and only 1 goal across Flamengo’s matches against Grêmio and Vitória.",
+      pt: "Uma análise sobre 46 finalizações, 4,57 xG e apenas 1 gol nos jogos contra Grêmio e Vitória."
+    },
+    files: {
+      en: "en/flamengo-volume-without-venom.docx",
+      pt: "pt/flamengo-volume-sem-veneno.docx"
+    },
+    cover: "assets/flamengo-volume-sem-veneno.png"
+  }    
 ];
