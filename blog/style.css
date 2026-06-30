@@ -85,91 +85,6 @@ img {
   color: var(--accent);
 }
 
-.small-language-button {
-  border: 1px solid var(--line);
-  background: var(--bg-soft);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.small-language-button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.language-screen {
-  min-height: calc(100vh - 72px);
-  display: grid;
-  place-items: center;
-  padding: 48px 16px;
-  background:
-    radial-gradient(circle at top left, rgba(185, 28, 28, 0.08), transparent 420px),
-    linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
-}
-
-.language-card {
-  width: min(760px, 100%);
-  border: 1px solid var(--line);
-  background: #ffffff;
-  padding: clamp(28px, 5vw, 56px);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.08);
-}
-
-.language-card h1 {
-  font-size: clamp(2.2rem, 5vw, 4.4rem);
-  line-height: 1;
-  letter-spacing: -0.06em;
-  font-weight: 500;
-  margin-bottom: 18px;
-}
-
-.language-card p {
-  color: var(--muted);
-  font-size: 1.1rem;
-  max-width: 620px;
-}
-
-.language-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 36px;
-}
-
-.language-choice {
-  text-align: left;
-  border: 1px solid var(--line);
-  background: #fff;
-  padding: 22px;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.language-choice:hover {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-  transform: translateY(-2px);
-}
-
-.language-choice span {
-  display: block;
-  font-family: Inter, Arial, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.language-choice small {
-  display: block;
-  color: var(--muted);
-  font-family: Inter, Arial, sans-serif;
-}
-
 .blog-hero {
   padding: 72px 0 48px;
   border-bottom: 1px solid var(--line);
@@ -448,11 +363,6 @@ img {
   }
 }
 
-@media (max-width: 720px) {
-  .language-actions {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 640px) {
   .nav {

@@ -3,17 +3,21 @@ function getArticleId() {
   return params.get("id") || articles[0].id;
 }
 
-let currentLanguage = getSavedLanguage() || "en";
+function getArticleFile(article) {
+  return article.file || "";
+}
 
-function setArticleUrlLang(lang) {
+function removeLanguageParameterFromUrl() {
   const url = new URL(window.location.href);
-  url.searchParams.set("lang", lang);
-  window.history.replaceState({}, "", url);
+
+  if (url.searchParams.has("lang")) {
+    url.searchParams.delete("lang");
+    window.history.replaceState({}, "", url);
+  }
 }
 
 async function loadArticle() {
-  setLanguage(currentLanguage);
-  setArticleUrlLang(currentLanguage);
+  removeLanguageParameterFromUrl();
 
   const articleId = getArticleId();
   const article = articles.find(item => item.id === articleId);
@@ -26,32 +30,35 @@ async function loadArticle() {
   const cover = document.getElementById("article-cover");
 
   if (!article) {
-    title.textContent = translations[currentLanguage].articleNotFound;
-    content.innerHTML = `<p>${translations[currentLanguage].articleNotFoundText}</p>`;
+    document.title = "Article not found | Thiago Koppel";
+    title.textContent = "Article not found";
+    content.innerHTML = "<p>Go back to the blog page and choose an available article.</p>";
     return;
   }
 
-  document.title = `${article.title[currentLanguage]} | Thiago Koppel`;
-  title.textContent = article.title[currentLanguage];
-  category.textContent = article.category[currentLanguage];
-  meta.textContent = `${article.date[currentLanguage]} • ${article.readingTime[currentLanguage]}`;
+  document.title = `${article.title} | Thiago Koppel`;
+  title.textContent = article.title;
+  category.textContent = article.category;
+  meta.textContent = `${article.date} • ${article.readingTime}`;
 
   if (article.cover) {
     cover.src = article.cover;
-    cover.alt = article.title[currentLanguage];
+    cover.alt = article.title;
     coverWrapper.classList.remove("hidden");
   }
 
   if (!window.mammoth) {
     content.innerHTML = `
-      <p>${translations[currentLanguage].fileErrorTitle}</p>
+      <p>Could not load the article file.</p>
       <p>Mammoth.js did not load. Check your internet connection.</p>
     `;
     return;
   }
 
+  const articleFile = getArticleFile(article);
+
   try {
-    const response = await fetch(`articles/${article.files[currentLanguage]}`);
+    const response = await fetch(`articles/${articleFile}`);
     if (!response.ok) throw new Error("Article file not found");
 
     const arrayBuffer = await response.arrayBuffer();
@@ -85,21 +92,12 @@ async function loadArticle() {
     }
   } catch (error) {
     content.innerHTML = `
-      <p>${translations[currentLanguage].fileErrorTitle}</p>
-      <p>${translations[currentLanguage].fileErrorHelp}</p>
-      <p><strong>File:</strong> articles/${article.files[currentLanguage]}</p>
+      <p>Could not load the article file.</p>
+      <p>Check if the DOCX file exists inside the blog/articles folder.</p>
+      <p><strong>File:</strong> articles/${articleFile}</p>
       <p><strong>Details:</strong> ${error.message}</p>
     `;
   }
-}
-
-const switchButton = document.getElementById("switch-article-language");
-if (switchButton) {
-  switchButton.addEventListener("click", () => {
-    currentLanguage = currentLanguage === "en" ? "pt" : "en";
-    localStorage.setItem("blogLanguage", currentLanguage);
-    loadArticle();
-  });
 }
 
 loadArticle();
