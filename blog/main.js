@@ -6,7 +6,7 @@ const topics = [
   "Artificial Intelligence",
   "Computer Vision",
   "Python",
-  "Football Analytics"
+  "Software Engineering"
 ];
 
 function articleUrl(article) {
