@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,47 +14,21 @@
       <a class="brand" href="../index.html">Thiago Koppel</a>
 
       <nav class="top-nav">
-        <a href="../index.html" data-i18n="navHome">Home</a>
-        <a href="../index.html#about" data-i18n="navAbout">About</a>
-        <a href="../index.html#projects" data-i18n="navProjects">Projects</a>
-        <a href="../index.html#contact" data-i18n="navContact">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
       </nav>
-
-      <button class="small-language-button" id="change-language-button" type="button">
-        Change language
-      </button>
     </div>
   </header>
 
   <main>
-    <section id="language-screen" class="language-screen">
-      <div class="language-card">
-        <p class="section-label">Thiago Koppel Blog</p>
-        <h1>Choose your language</h1>
-        <p>
-          Select how you want to read the blog. You can switch languages later at any time.
-        </p>
-
-        <div class="language-actions">
-          <button class="language-choice" type="button" data-lang="en">
-            <span>English</span>
-            <small>Read articles in English</small>
-          </button>
-
-          <button class="language-choice" type="button" data-lang="pt">
-            <span>Português</span>
-            <small>Ler artigos em português</small>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="blog-content" class="hidden">
+    <section id="blog-content">
       <section class="blog-hero">
         <div class="container">
-          <p class="section-label" data-i18n="heroLabel">Football Analytics Blog</p>
-          <h1 data-i18n="heroTitle">Articles about football, data and artificial intelligence.</h1>
-          <p class="hero-text" data-i18n="heroText">
+          <p class="section-label">Football Analytics Blog</p>
+          <h1>Articles about football, data and artificial intelligence.</h1>
+          <p class="hero-text">
             Simple and objective studies about performance analysis, xG, decision-making,
             data visualization and AI applications in football.
           </p>
@@ -64,8 +38,8 @@
       <section class="container blog-layout">
         <div class="main-column">
           <div class="section-title">
-            <h2 data-i18n="latestArticles">Latest articles</h2>
-            <p data-i18n="latestDescription">Texts with technical analysis format.</p>
+            <h2>Latest articles</h2>
+            <p>Texts with a technical analysis format.</p>
           </div>
 
           <div id="articles-list" class="articles-list"></div>
@@ -73,15 +47,15 @@
 
         <aside class="sidebar">
           <div class="side-card">
-            <h3 data-i18n="aboutBlogTitle">About this blog</h3>
-            <p data-i18n="aboutBlogText">
+            <h3>About this blog</h3>
+            <p>
               This space brings together football analysis using data, AI, Python, video review
               and tactical interpretation.
             </p>
           </div>
 
           <div class="side-card">
-            <h3 data-i18n="topicsTitle">Topics</h3>
+            <h3>Topics</h3>
             <ul class="topics" id="topics-list"></ul>
           </div>
         </aside>
@@ -96,7 +70,6 @@
   </footer>
 
   <script src="articles.js"></script>
-  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
