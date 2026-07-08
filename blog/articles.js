@@ -3,7 +3,7 @@
 
 const articles = [
   {
-    id: "pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection",
+    id: "linear_algebra_in_ai_from_theory_to_real_applications",
     category: "Computer Vision / Artificial Intelligence",
     title: "Linear Algebra in AI: From Theory to Real Applications",
     date: "2026",
