@@ -2,6 +2,16 @@
 // Add a new object for each article.
 
 const articles = [
+    {
+    id: "scaling_arduino_projects_with_I2C",
+    category: "Software Architecture / Embedded Systems",
+    title: "Scaling Arduino Projects with I²C: A Modular Alternative to Bigger Microcontrollers",
+    date: "2026",
+    readingTime: "9 min read",
+    summary: "A practical approach to scaling Arduino projects using a master/slave I²C architecture.",
+    file: "scaling_arduino_projects_with_I2C.docx",
+    cover: "assets/scaling_arduino_projects_with_I2C.png"
+  },
   {
     id: "linear_algebra_in_ai_from_theory_to_real_applications",
     category: "Computer Vision / Artificial Intelligence",
