@@ -74,11 +74,12 @@
       }
 
       .hero-inner {
+        align-content: start;
         display: grid;
         grid-template-columns: 1fr;
         gap: 28px;
-        min-height: min(720px, 92vh);
-        padding: 34px 0 44px;
+        min-height: auto;
+        padding: 34px 0 28px;
       }
 
       .nav {
@@ -112,9 +113,9 @@
       }
 
       .intro {
-        align-self: center;
+        align-self: start;
         max-width: 760px;
-        padding-bottom: 28px;
+        padding-bottom: 0;
       }
 
       .eyebrow {
@@ -124,12 +125,6 @@
         letter-spacing: 0.08em;
         margin: 0 0 12px;
         text-transform: uppercase;
-      }
-
-      h1 {
-        font-size: clamp(2.5rem, 7vw, 5.8rem);
-        line-height: 0.96;
-        margin: 0;
       }
 
       .lead {
@@ -184,6 +179,10 @@
 
       section {
         padding: 58px 0;
+      }
+
+      #how-it-works {
+        padding-top: 34px;
       }
 
       section:nth-of-type(even) {
@@ -409,7 +408,6 @@
 
         <div id="top" class="intro">
           <p class="eyebrow">Chrome extension for Brazilian Portuguese</p>
-          <h1>Acentua</h1>
           <p class="lead">
             Acentua restores high-confidence Brazilian Portuguese accents while
             you type with an English keyboard. Corrections happen locally in
