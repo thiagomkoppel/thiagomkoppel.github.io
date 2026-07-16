@@ -263,7 +263,10 @@
         grid-row: 1 / span 2;
       }
 
-      .feature-grid,
+      .feature-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
       .privacy-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
@@ -459,16 +462,17 @@
               <h3>Review ambiguous suggestions</h3>
               <p>
                 Ambiguous words such as <code>esta</code> are not changed
-                automatically. Accept the suggestion with a click or
-                <code>Ctrl+.</code>, or dismiss it with <code>Ctrl+,</code>.
+                automatically. Accept the suggestion with a click or the
+                default <code>Ctrl+.</code>, or dismiss it with the default
+                <code>Ctrl+,</code>. You can change both shortcuts in Options.
               </p>
             </article>
             <article class="step">
               <h3>Customize when needed</h3>
               <p>
                 Use the extension options to disable websites, add ignored
-                words, add custom corrections, or turn ambiguous suggestions on
-                and off.
+                words, add custom corrections, change suggestion shortcuts, or
+                turn ambiguous suggestions on and off.
               </p>
             </article>
           </div>
@@ -504,6 +508,14 @@
               <p>
                 Passwords, emails, URLs, payment-style fields, code areas, and
                 unsupported editors are left alone.
+              </p>
+            </article>
+            <article class="feature">
+              <strong>Configurable shortcuts</strong>
+              <p>
+                Use the defaults <code>Ctrl+.</code> and <code>Ctrl+,</code>,
+                or set alternatives such as <code>Ctrl+]</code> and
+                <code>Ctrl+[</code> in Options.
               </p>
             </article>
           </div>
@@ -590,7 +602,8 @@
               ></textarea>
               <p>
                 Safe words should correct. <code>esta</code> should show a
-                suggestion instead of changing automatically.
+                suggestion instead of changing automatically. Accept or dismiss
+                it with the popup, or with your configured shortcut.
               </p>
             </article>
 
@@ -656,8 +669,8 @@
               <strong>Local settings only</strong>
               <p>
                 Chrome storage is used for settings such as enabled state,
-                disabled websites, ignored words, custom corrections, and
-                ambiguous suggestion preference.
+                disabled websites, ignored words, custom corrections, ambiguous
+                suggestion preference, and suggestion shortcut keys.
               </p>
             </article>
           </div>
@@ -667,6 +680,18 @@
             remote logging, user accounts, or external AI services. Sensitive
             fields such as passwords, emails, URLs, payment fields, and code
             areas are skipped where possible.
+          </p>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="wrap">
+          <h2>Contact</h2>
+          <p class="section-intro">
+            Questions, support requests, and feedback about Acentua can be sent
+            by email.
+          </p>
+          <p>
+            <a class="button" href="mailto:thiagomkoppel@gmail.com">Email thiagomkoppel@gmail.com</a>
           </p>
         </div>
       </section>
