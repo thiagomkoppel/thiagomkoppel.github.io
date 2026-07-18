@@ -6,7 +6,7 @@
     <title>Acentua - Brazilian Portuguese Accent Helper</title>
     <meta
       name="description"
-      content="Acentua restores high-confidence Brazilian Portuguese accents locally while you type in Chrome."
+      content="Acentua 0.1.1 restores high-confidence Brazilian Portuguese accents locally while you type in Chrome."
     />
     <style>
       :root {
@@ -160,6 +160,23 @@
         border-color: #b9c4cc;
       }
 
+      .release-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .release-pill {
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(23, 32, 38, 0.12);
+        border-radius: 8px;
+        color: #30404a;
+        font-size: 0.88rem;
+        font-weight: 750;
+        padding: 6px 9px;
+      }
+
       .example-row {
         display: flex;
         flex-wrap: wrap;
@@ -264,7 +281,7 @@
       }
 
       .feature-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .privacy-grid {
@@ -403,6 +420,7 @@
             <span>Acentua</span>
           </a>
           <div class="nav-links">
+            <a href="https://chromewebstore.google.com/detail/efijbmalniablofmklkgemdjefpcfkbf" target="_blank" rel="noopener">Install</a>
             <a href="#how-it-works">How it works</a>
             <a href="#try">Try it</a>
             <a href="#privacy">Privacy</a>
@@ -415,11 +433,19 @@
           <p class="lead">
             Acentua restores high-confidence Brazilian Portuguese accents while
             you type with an English keyboard. Corrections happen locally in
-            your browser after a word is completed.
+            your browser after a word is completed, and PT mode can be paused
+            from the extension popup when you write in another language.
           </p>
           <div class="actions" aria-label="Page actions">
-            <a class="button" href="#try">Try the test fields</a>
+            <a class="button" href="https://chromewebstore.google.com/detail/efijbmalniablofmklkgemdjefpcfkbf" target="_blank" rel="noopener">Install from Chrome Web Store</a>
+            <a class="button secondary" href="#try">Try the test fields</a>
             <a class="button secondary" href="#privacy">Read privacy policy</a>
+          </div>
+          <div class="release-info" aria-label="Current package information">
+            <span class="release-pill">Version 0.1.1</span>
+            <span class="release-pill">4,056 safe corrections</span>
+            <span class="release-pill">132 ambiguous entries</span>
+            <span class="release-pill">PT mode toggle</span>
           </div>
           <div class="example-row" aria-label="Correction examples">
             <span class="example">tambem &rarr; tamb&eacute;m</span>
@@ -438,9 +464,9 @@
         <div class="wrap">
           <h2>How To Use Acentua</h2>
           <p class="section-intro">
-            Install the extension in Chrome, keep it enabled for the website
-            where you are typing, then finish a word with Space, punctuation,
-            Enter, or Tab. If the word is safe to correct, Acentua updates it
+            Install the extension in Chrome, keep PT mode on when writing in
+            Portuguese, then finish a word with Space, punctuation, Enter, or
+            Tab. If the word is safe to correct, Acentua updates it
             immediately.
           </p>
 
@@ -448,8 +474,15 @@
             <article class="step">
               <h3>Install it in Chrome</h3>
               <p>
-                Add Acentua from the Chrome Web Store. After installing, reload
+                Add Acentua from the <a href="https://chromewebstore.google.com/detail/efijbmalniablofmklkgemdjefpcfkbf" target="_blank" rel="noopener">Chrome Web Store</a>. After installing, reload
                 any pages that were already open.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Use PT mode</h3>
+              <p>
+                Open the Acentua popup to turn PT mode on for Portuguese or
+                off when you are writing in another language.
               </p>
             </article>
             <article class="step">
@@ -463,9 +496,11 @@
               <h3>Review ambiguous suggestions</h3>
               <p>
                 Ambiguous words such as <code>esta</code> are not changed
-                automatically. Accept the suggestion with a click or the
-                default <code>Ctrl+.</code>, or dismiss it with the default
-                <code>Ctrl+,</code>. You can change both shortcuts in Options.
+                automatically. Some words can show more than one option, such
+                as <code>avo</code> offering <code>avó</code> and
+                <code>avô</code>. Click the option you want, use the default
+                <code>Ctrl+.</code> for the first option, or dismiss with
+                <code>Ctrl+,</code>.
               </p>
             </article>
             <article class="step">
@@ -484,9 +519,7 @@
         <div class="wrap">
           <h2>What It Does</h2>
           <p class="section-intro">
-            Acentua is intentionally conservative. It corrects words that are
-            highly likely to need an accent and avoids automatic changes when
-            context is required.
+            Acentua 0.1.1 is intentionally conservative. It includes 4,056 safe local corrections and 132 ambiguous entries, correcting words that are highly likely to need an accent while avoiding automatic changes when context is required.
           </p>
 
           <div class="feature-grid">
@@ -512,11 +545,26 @@
               </p>
             </article>
             <article class="feature">
+              <strong>Quick PT mode</strong>
+              <p>
+                Use the popup to pause Acentua globally when you are writing in
+                another language, then turn it back on for Portuguese.
+              </p>
+            </article>
+            <article class="feature">
+              <strong>Multi-option suggestions</strong>
+              <p>
+                Ambiguous entries can show each valid accent option, so
+                <code>avo</code> can offer both <code>avó</code> and
+                <code>avô</code>.
+              </p>
+            </article>
+            <article class="feature">
               <strong>Configurable shortcuts</strong>
               <p>
-                Use the defaults <code>Ctrl+.</code> and <code>Ctrl+,</code>,
-                or set alternatives such as <code>Ctrl+]</code> and
-                <code>Ctrl+[</code> in Options.
+                Use the defaults <code>Ctrl+.</code> for first-option accept
+                and <code>Ctrl+,</code> for dismiss, or set alternatives such
+                as <code>Ctrl+]</code> and <code>Ctrl+[</code> in Options.
               </p>
             </article>
           </div>
@@ -550,6 +598,11 @@
                   <td><code>esta </code></td>
                   <td><code>esta </code> plus suggestion</td>
                   <td>User chooses whether to add the accent</td>
+                </tr>
+                <tr>
+                  <td><code>avo </code></td>
+                  <td><code>avó</code> or <code>avô</code></td>
+                  <td>Shows multiple local suggestion options</td>
                 </tr>
               </tbody>
             </table>
@@ -603,8 +656,9 @@
               ></textarea>
               <p>
                 Safe words should correct. <code>esta</code> should show a
-                suggestion instead of changing automatically. Accept or dismiss
-                it with the popup, or with your configured shortcut.
+                suggestion, and <code>avo</code> should offer both
+                <code>avó</code> and <code>avô</code>. Accept an option with
+                the popup, or use your configured shortcut for the first option.
               </p>
             </article>
 
@@ -648,7 +702,7 @@
       <section id="privacy">
         <div class="wrap">
           <h2>Privacy Policy</h2>
-          <p class="section-intro">Last updated: July 16, 2026.</p>
+          <p class="section-intro">Last updated: July 18, 2026.</p>
 
           <div class="privacy-grid">
             <article class="privacy-panel">
@@ -669,9 +723,9 @@
             <article class="privacy-panel">
               <strong>Local settings only</strong>
               <p>
-                Chrome storage is used for settings such as enabled state,
-                disabled websites, ignored words, custom corrections, ambiguous
-                suggestion preference, and suggestion shortcut keys.
+                Chrome storage is used for settings such as PT mode enabled
+                state, disabled websites, ignored words, custom corrections,
+                ambiguous suggestion preference, and suggestion shortcut keys.
               </p>
             </article>
           </div>
@@ -702,8 +756,7 @@
     <footer>
       <div class="wrap">
         <p>
-          Acentua is a privacy-first Chrome extension for Brazilian Portuguese
-          typing assistance.
+          Acentua is a privacy-first Chrome extension for Brazilian Portuguese typing assistance. Current Chrome Web Store package: 0.1.1.
         </p>
         <p><a href="#top">Back to top</a></p>
       </div>
