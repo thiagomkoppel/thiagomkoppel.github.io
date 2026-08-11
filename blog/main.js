@@ -2,11 +2,11 @@ const list = document.getElementById("articles-list");
 const topicsList = document.getElementById("topics-list");
 
 const topics = [
-  "Machine Learning",
-  "Artificial Intelligence",
-  "Computer Vision",
+  "Software Engineering",
   "Python",
-  "Software Engineering"
+  "Embedded Systems",
+  "AI Foundations",
+  "Practical Projects"
 ];
 
 function articleUrl(article) {
