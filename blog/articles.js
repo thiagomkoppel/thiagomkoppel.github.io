@@ -23,7 +23,7 @@ const articles = [
     cover: "assets/linear_algebra_ai_homography_linkedin_article.png"
   },
   {
-    id: "binary_versus_multi_class_segmentation",
+    id: "pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection",
     category: "Computer Vision / Artificial Intelligence",
     title: "Binary versus multi-class segmentation",
     date: "2026",
