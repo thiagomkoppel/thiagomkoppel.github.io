@@ -21,5 +21,15 @@ const articles = [
     summary: "Concepts like matrices, vectors, and transformations may look theoretical at first, but they are fundamental in areas like computer vision.",
     file: "linear_algebra_ai_homography_linkedin_article.docx",
     cover: "assets/linear_algebra_ai_homography_linkedin_article.png"
+  },
+  {
+    id: "binary_versus_multi_class_segmentation",
+    category: "Computer Vision / Artificial Intelligence",
+    title: "Binary versus multi-class segmentation",
+    date: "2026",
+    readingTime: "10 min read",
+    summary: "Binary versus multi-class segmentation—under the demanding conditions of live broadcast",
+    file: "pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection.docx",
+    cover: "assets/pitch_perfect_evaluating_segmentation_approaches_for_football_line_detection.png"
   }
 ];
